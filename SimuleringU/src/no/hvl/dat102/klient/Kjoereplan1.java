@@ -30,7 +30,7 @@ public class Kjoereplan1{
         
         System.out.println("antall " + antall);
         JobbSamling ferdige = new JobbSamling(antall);
-
+/*
         while(ferdige.getAntall() < antall){//Ytre løkke
             
             //Henter eventuelle jobber til klarkøen
@@ -51,7 +51,7 @@ public class Kjoereplan1{
              }else  // Ingen jobber klar til kjøring
                    klokke = klokke + 1;
          }//while       
-                       
+          */             
        
         ferdige.visJobber();                  
     }//main

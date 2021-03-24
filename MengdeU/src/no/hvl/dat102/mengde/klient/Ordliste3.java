@@ -1,4 +1,4 @@
-package no.hv.dat102.mengde.klient;
+package no.hvl.dat102.mengde.klient;
 
 import no.hvl.dat102.mengde.adt.MengdeADT;
 import no.hvl.dat102.mengde.kjedet.KjedetMengde;

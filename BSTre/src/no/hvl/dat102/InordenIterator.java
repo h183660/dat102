@@ -12,7 +12,7 @@ public class InordenIterator<T> implements Iterator<T>{
 
  // gå helt til venstre
  // stable på venstrebarn
-
+ 
  private BinaerTreNode<T> gaaTilVenstre(BinaerTreNode<T> p){
   if (p == null)
    return null;

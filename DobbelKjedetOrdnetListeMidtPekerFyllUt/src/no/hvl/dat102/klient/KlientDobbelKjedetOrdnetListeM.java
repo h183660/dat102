@@ -1,6 +1,6 @@
 package no.hvl.dat102.klient;
 
-import no.hvl.dat102.dobbelkjedetordnetlistem.DobbelKjedetOrdnetListeM;
+import no.hvl.dat102.dobbelkjedetordnetliste.DobbelKjedetOrdnetListeM;
 
 public class KlientDobbelKjedetOrdnetListeM {
 

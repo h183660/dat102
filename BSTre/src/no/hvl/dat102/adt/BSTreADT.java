@@ -4,9 +4,9 @@ import java.util.*;
 
 public interface BSTreADT<T extends Comparable<T>> {
 	// Burde hatt javadoc her
-	// Anbefaler at du fyller ut med javadoc her som kan vaere en del av 
+	// Anbefaler at du fyller ut med javadoc her som kan vaere en del av
 	// øvingen. Flere metoder må fylles ut i implementasjonsfilen.
-	//Legg merke til at i denne imlementasjonen er det ikke brukt exceptions som
+	// Legg merke til at i denne imlementasjonen er det ikke brukt exceptions som
 	// vi kunne hatt og som vi har brukt for i flere av de andre samlingene.
 
 	/*****************************************************************
@@ -31,12 +31,12 @@ public interface BSTreADT<T extends Comparable<T>> {
 	 * binære treet ellers returneres null./
 	 ************************************************************************/
 	public T finn(T element);
-	
+
 	/*****************************************************************
 	 * Returnerer en referanse til minste elementet, null viss tre er tomt.
 	 *****************************************************************/
 	public T finnMin();
-	
+
 	/*****************************************************************
 	 * Returnerer en referanse til største elementet, null viss tre er tomt.
 	 *****************************************************************/
@@ -45,17 +45,17 @@ public interface BSTreADT<T extends Comparable<T>> {
 	/************************************************************************
 	 * Fjerner et element fra dette treet hvis det fins, ellers returneres null
 	 ************************************************************************/
-	
-	// public T fjern( T element);
-	// Ikke impelmentert
-	
+	public T fjern(T element);
+
 	/************************************************************************
-	 * Fjerner minste elementet fra dette treet hvis det fins, ellers returneres null
+	 * Fjerner minste elementet fra dette treet hvis det fins, ellers returneres
+	 * null
 	 ************************************************************************/
 	public T fjernMin();
-	
+
 	/************************************************************************
-	 * Fjerner største elementet fra dette treet hvis det fins, ellers returneres null
+	 * Fjerner største elementet fra dette treet hvis det fins, ellers returneres
+	 * null
 	 ************************************************************************/
 	public T fjernMaks();
 }

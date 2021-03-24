@@ -1,4 +1,4 @@
-package no.hvl.dat102.dobbelkjedetordnetlistem;
+package no.hvl.dat102.dobbelkjedetordnetliste;
 
 import no.hvl.dat102.adt.DobbelKjedetOrdnetListeMADT;
 

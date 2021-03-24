@@ -1,4 +1,4 @@
-package no.hv.dat102.mengde.klient;
+package no.hvl.dat102.mengde.klient;
 
 import no.hvl.dat102.mengde.adt.MengdeADT;
 import no.hvl.dat102.mengde.kjedet.KjedetMengde;
@@ -14,7 +14,7 @@ public class KlientBingo {
 		MengdeADT<Bingokule> mengde2 = new KjedetMengde<>();
 		Bingokule kule1 = null;
 		Bingokule kule2 = null;
-/*
+
 		for (int i = 1; i <= ANTALL_BALLER; i++) {
 			kule1 = new Bingokule(i);
 			kule2 = new Bingokule(ANTALL_BALLER + 1 - i);
@@ -40,6 +40,6 @@ public class KlientBingo {
 				System.out.println("Ulike mengder");
 			}
 		}
-*/
+
 	}
 }// class

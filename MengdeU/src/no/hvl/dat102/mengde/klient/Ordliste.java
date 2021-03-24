@@ -1,4 +1,4 @@
-package no.hv.dat102.mengde.klient;
+package no.hvl.dat102.mengde.klient;
 
 import java.util.Scanner;
 
