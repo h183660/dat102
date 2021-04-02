@@ -28,42 +28,34 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		this.rot = rot;
 	}
 
-	/******************************************************************
+	/**
 	 * Oppretter et tomt binært søketre.
-	 ******************************************************************/
+	 */
 	public KjedetBSTre() {
 		antall = 0;
 		rot = null;
 	}
 
-	/******************************************************************
+	/**
 	 * Oppretter et binært søketre med en node..
-	 ******************************************************************/
+	 * 
+	 * @param element
+	 */
 	public KjedetBSTre(T element) {
 		rot = new BinaerTreNode<T>(element);
 		antall = 1;
 	}
 
-	/*****************************************************************
-	 * Returnerer sann hvis dette binære trett er tomt og usann ellers.
-	 *****************************************************************/
 	@Override
 	public int antall() {
 		return antall;
 	}
 
-	/*****************************************************************
-	 * Returnerer sann hvis dette binære treet er tom og usann ellers.
-	 *****************************************************************/
 	@Override
 	public boolean erTom() {
 		return (antall == 0);
 	}
 
-	/**********************************************************************
-	 * Legger det spesifiserte elementet på passende plass i BS-treet. Like
-	 * elementer blir lagt til høyre. Bruk av rekursiv hjelpemetode.
-	 ********************************************************************/
 	@Override
 	public void leggTil(T element) {
 		rot = leggTilRek(rot, element);
@@ -80,11 +72,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		}
 		return p;
 	}
-
-	/******************************************************************
-	 * Legger det spesifiserte elementet på passende plass i dette binære søketreet.
-	 * Like elementer blir lagt til høyre.
-	 ******************************************************************/
 
 	public void leggTil2(T element) {
 		//
@@ -104,6 +91,13 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return svar;
 	}
 
+	/**
+	 * Rekursiv metode for å fjerne et element fra det binaere treet
+	 * 
+	 * @param element
+	 * @param p
+	 * @return Det fjernete elementet
+	 */
 	private T fjernRek(T element, BinaerTreNode<T> p) {
 		T svar = null;
 		if (p != null) {
@@ -119,9 +113,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return svar;
 	}
 
-	/******************************************************************
-	 * Fjerner noden med minste verdi fra dette binære søketreet.
-	 *********************************************************************/
 	@Override
 	public T fjernMin() {
 		T svar = null;
@@ -147,9 +138,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return svar;
 	}//
 
-	/******************************************************************
-	 * Fjerner noden med største verdi fra dette binære søketreet.
-	 ******************************************************************/
 	@Override
 	public T fjernMaks() {
 		T svar = null;
@@ -175,9 +163,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return svar;
 	}//
 
-	/******************************************************************
-	 * Returnerer det minste elementet i dette binære søketreet.
-	 ******************************************************************/
 	@Override
 	public T finnMin() {
 		BinaerTreNode<T> aktuell = rot;
@@ -189,9 +174,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 
 	}//
 
-	/******************************************************************
-	 * Returnerer det største elementet i dette binære søketreet.
-	 ******************************************************************/
 	@Override
 	public T finnMaks() {
 		BinaerTreNode<T> aktuell = rot;
@@ -202,16 +184,19 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return aktuell.getElement();
 	}//
 
-	/*******************************************************************************
-	 * Returnerer en referanse til det spesifiserte elementet hvis det finst i dette
-	 * BS-treet, null ellers. Bruk av rekursjon /
-	 ******************************************************************************/
 	@Override
 	public T finn(T element) {
 		// Søk med rekursiv hjelpemetode
 		return finnRek(element, rot);
 	}
 
+	/**
+	 * Rekursiv metode for å finne et element i et binaert tre
+	 * 
+	 * @param element
+	 * @param p
+	 * @return
+	 */
 	private T finnRek(T element, BinaerTreNode<T> p) {
 		T svar = null;
 		if (p != null) {
@@ -227,19 +212,33 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		return svar;
 	}
 
-	/************************************************************************
+	/**
 	 * Returnerer en referanse til det spesifiserte elementet hvis det fins i dette
-	 * BS-treet, null ellers. Uten bruk av rekursjon. /
-	 ************************************************************************/
+	 * BS-treet, null ellers. Uten bruk av rekursjon.
+	 * 
+	 * @param element
+	 * @return Returnerer elementet hvis funnet, null ellers.
+	 */
 	public T finn2(T element) {
 		// TODO
 		return null;
 	}
 
+	/**
+	 * Finner hoyden på det binaere treet
+	 * 
+	 * @return Hoyden til treet i int
+	 */
 	public int finnHoyde() {
 		return finnHoydeRek(rot);
 	}
 
+	/**
+	 * Rekursiv metode for å finne hoyden
+	 * 
+	 * @param p
+	 * @return Returnerer hoyden på den delen som er hoyest.
+	 */
 	public int finnHoydeRek(BinaerTreNode<T> p) {
 		if (p == null) {
 			return -1;
@@ -250,11 +249,19 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		}
 	}
 
+	/**
+	 * Skriver ut hele treet med inorden-notasjon.
+	 */
 	public void visInorden() {
 		visInorden(rot);
 		System.out.println();
 	}
 
+	/**
+	 * Rekursiv metode for å vise inorden.
+	 * 
+	 * @param p
+	 */
 	private void visInorden(BinaerTreNode<T> p) {
 		if (p != null) {
 			visInorden(p.getVenstre());

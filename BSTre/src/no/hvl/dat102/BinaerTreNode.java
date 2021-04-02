@@ -1,18 +1,22 @@
 package no.hvl.dat102;
 
-//  BinærTreNode.java               
-//
-//  Representerer en node i et binært tre.
-//*******************************************************************
-
+/**
+ * Representerer en node i et binært tre.
+ * 
+ * @author TAE
+ *
+ * @param <T>
+ */
 public class BinaerTreNode<T> {
 	private T element;
 	private BinaerTreNode<T> venstre;
 	private BinaerTreNode<T> hoyre;
 
-	/*****************************************************************
+	/**
 	 * Oppretter et nytt tre med spesifisert data.
-	 *****************************************************************/
+	 * 
+	 * @param el
+	 */
 	public BinaerTreNode(T el) {
 		element = el;
 		venstre = null;
@@ -25,11 +29,9 @@ public class BinaerTreNode<T> {
 		this.hoyre = hoyre;
 	}
 
-	/******************************************************************/
-	/*
-	 * Hent- og settmetoder /
-	 ******************************************************************/
-
+	/**
+	 * Hent- og settmetoder
+	 */
 	public BinaerTreNode<T> getVenstre() {
 		return venstre;
 	}
