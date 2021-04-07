@@ -89,7 +89,7 @@ public class KjedetBSTreADTTest {
 	}
 
 	/**
-	 * 2 Tester ordning ved å bruke en inordeniterator Her studerer du alt om bruk
+	 * 2. Tester ordning ved å bruke en inordeniterator Her studerer du alt om bruk
 	 * av inordeniterator.
 	 */
 	@Test

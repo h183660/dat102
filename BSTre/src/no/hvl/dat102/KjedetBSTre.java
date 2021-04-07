@@ -240,31 +240,57 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 	/**
 	 * Rekursiv metode for å finne hoyden
 	 * 
-	 * @param p
+	 * @param BinaerTreNode p
 	 * @return Returnerer hoyden på den delen som er hoyest.
 	 */
 	public int finnHoydeRek(BinaerTreNode<T> p) {
 		if (p == null) {
 			return -1;
 		} else {
-			int venstreHoyde = finnHoydeRek(p.getVenstre());
-			int hoyreHoyde = finnHoydeRek(p.getHoyre());
 			return Math.max(finnHoydeRek(p.getVenstre()), finnHoydeRek(p.getHoyre())) + 1;
 		}
 	}
 
+	/**
+	 * Skriver ut verdier i BS-Treet mellom en nedre og øvre grense.
+	 * 
+	 * @param nedre grense
+	 * @param øvre  grense
+	 */
 	public void skrivVerdier(T nedre, T ovre) {
 		skrivVerdierRek(rot, nedre, ovre);
 	}
 
+	/**
+	 * Privat rekursiv metode for å skrive ut verdier i BS-Treet mellom en nedre og
+	 * øvre grense.
+	 * 
+	 * @param BinaerTreNode
+	 * @param min
+	 * @param maks
+	 */
 	private void skrivVerdierRek(BinaerTreNode<T> t, T min, T maks) {
+		// Den originale metoden går gjennom alt rekursivt selv om det ikke er
+		// nødvendig, f.eks den gjør rekursive kall til venstre og til høyre, selv om
+		// den aktuelle noden er høyere enn max verdien allerede, i dette
+		// tilfellet er det ikke nødvendig å gi et rekursivt kall til høyrebarnet.
 		if (t != null) {
-			skrivVerdierRek(t.getVenstre(), min, maks);
-			if ((t.getElement().compareTo(min) >= 0) && (t.getElement().compareTo(maks) <= 0)) {
+			int smlmin = t.getElement().compareTo(min);
+			int smlmax = t.getElement().compareTo(maks);
+
+			if (smlmin > 0) {
+				skrivVerdierRek(t.getVenstre(), min, maks);
+			}
+
+			if ((smlmin >= 0) && (smlmax <= 0)) {
 				System.out.print(t.getElement() + " ");
 			}
-			skrivVerdierRek(t.getHoyre(), min, maks);
+
+			if (smlmax <= 0) {
+				skrivVerdierRek(t.getHoyre(), min, maks);
+			}
 		}
+
 	}
 
 	/**

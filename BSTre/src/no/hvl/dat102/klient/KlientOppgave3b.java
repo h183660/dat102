@@ -56,6 +56,14 @@ public class KlientOppgave3b {
 		double gjennomsnitt = sum / 100;
 		System.out.println("Gjennomsnittelig høyde er: " + gjennomsnitt);
 		// Får en gjennomsnittelig høyde på 21.17 på en kjøring
+		// Får 21.00 på en annen...
+
+		System.out.println("Skriver ut verdier i et tre mellom 0 og 10000000: ");
+		tre[0].skrivVerdier(0, 10000000);
+		System.out.println();
+
+		System.out.println("Skriver ut verdier i et tre mellom -10000000 og 0: ");
+		tre[0].skrivVerdier(-10000000, 0);
 	}
 
 	private static int minTeoretiskHoyde(int n) {
