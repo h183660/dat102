@@ -1,12 +1,12 @@
 package no.hvl.dat102.klient;
 
-import java.util.*;
-
+import java.util.Random;
 import no.hvl.dat102.KjedetBSTre;
 
-public class Klient {
+public class KlientOppgave3b {
 
 	public static void main(String[] args) {
+
 		KjedetBSTre[] tre = new KjedetBSTre[100];
 		Random terning = new Random();
 
@@ -17,6 +17,7 @@ public class Klient {
 				tre[j].leggTil(tall);
 			}
 		}
+
 		System.out.println("Den minste teoretiske høyden er: " + minTeoretiskHoyde(1023));
 		System.out.println("Den største teoretiske høyden er: " + maksTeoretiskHoyde(1023));
 
@@ -28,9 +29,10 @@ public class Klient {
 				min = ny;
 			}
 		}
+
 		System.out.println("Minste høyden er: " + min);
-		//Får 17 på en kjøring
-		
+		// Får 17 på en kjøring
+		// Får 18 på en annen
 
 		System.out.println("Finner den største høyden....");
 		int maks = tre[0].finnHoyde();
@@ -40,9 +42,11 @@ public class Klient {
 				maks = ny;
 			}
 		}
+
 		System.out.println("Den største høyden er: " + maks);
-		//Får 29 på en kjøring
-		
+		// Får 29 på en kjøring
+		// Får 28 på en annen
+		// Får 27 på en annen...
 
 		System.out.println("Finner den gjennomsnittelige høyden.....");
 		double sum = 0;
@@ -51,7 +55,7 @@ public class Klient {
 		}
 		double gjennomsnitt = sum / 100;
 		System.out.println("Gjennomsnittelig høyde er: " + gjennomsnitt);
-		//Får en gjennomsnittelig høyde på 21.17 på en kjøring
+		// Får en gjennomsnittelig høyde på 21.17 på en kjøring
 	}
 
 	private static int minTeoretiskHoyde(int n) {

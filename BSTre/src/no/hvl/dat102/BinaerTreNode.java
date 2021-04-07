@@ -3,8 +3,6 @@ package no.hvl.dat102;
 /**
  * Representerer en node i et binært tre.
  * 
- * @author TAE
- *
  * @param <T>
  */
 public class BinaerTreNode<T> {
@@ -29,9 +27,7 @@ public class BinaerTreNode<T> {
 		this.hoyre = hoyre;
 	}
 
-	/**
-	 * Hent- og settmetoder
-	 */
+	// Hent- og settmetoder
 	public BinaerTreNode<T> getVenstre() {
 		return venstre;
 	}

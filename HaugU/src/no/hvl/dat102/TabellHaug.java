@@ -15,6 +15,7 @@ public class TabellHaug<T extends Comparable<T>> {
 
 	/**
 	 * Legger til et element i haugen
+	 * 
 	 * @param el
 	 */
 	public void leggTilElement(T el) {
@@ -38,11 +39,12 @@ public class TabellHaug<T extends Comparable<T>> {
 	}
 
 	private void reparerOpp() {
-		// ... fyll ut
+
 	}
 
 	/**
 	 * Fjerner minste elementet i haugen
+	 * 
 	 * @return Det minste elementet
 	 */
 	public T fjernMinste() {
@@ -58,6 +60,7 @@ public class TabellHaug<T extends Comparable<T>> {
 
 	/**
 	 * Finner minste tabellen i haugen
+	 * 
 	 * @return Det minste elementet
 	 */
 	public T finnMinste() {
