@@ -43,7 +43,7 @@ public class TabellHaug<T extends Comparable<T>> {
 		T temp = data[node]; // Midlertidig variabel til bytting
 
 		// Løkke som beveger til den enten kommer til roten, eller forelderen til den
-		// aktuelle noden er større til den aktuelle.
+		// aktuelle noden er mindre enn den aktuelle.
 		while ((node != 0) && temp.compareTo(data[(node - 1) / 2]) < 0) {
 			data[node] = data[(node - 1) / 2];
 			node = (node - 1) / 2;
