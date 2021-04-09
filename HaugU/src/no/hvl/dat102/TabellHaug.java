@@ -39,7 +39,16 @@ public class TabellHaug<T extends Comparable<T>> {
 	}
 
 	private void reparerOpp() {
+		int node = antall - 1; // Start på det siste elementet (det som ble lagt til)
+		T temp = data[node]; // Midlertidig variabel til bytting
 
+		// Løkke som beveger til den enten kommer til roten, eller forelderen til den
+		// aktuelle noden er større til den aktuelle.
+		while ((node != 0) && temp.compareTo(data[(node - 1) / 2]) < 0) {
+			data[node] = data[(node - 1) / 2];
+			node = (node - 1) / 2;
+		}
+		data[node] = temp;
 	}
 
 	/**
@@ -49,7 +58,7 @@ public class TabellHaug<T extends Comparable<T>> {
 	 */
 	public T fjernMinste() {
 		T svar = null;
-		if (antall > 0) {
+		if (!erTom()) {
 			svar = data[0];
 			data[0] = data[antall - 1];
 			reparerNed(); // Bytter om nedover hvis nødvendig
@@ -65,15 +74,12 @@ public class TabellHaug<T extends Comparable<T>> {
 	 */
 	public T finnMinste() {
 		T svar = null;
-		if (antall > 0) {
+		if (!erTom()) {
 			svar = data[0];
 		}
 		return svar;
 	}
 
-	/**
-	 * 
-	 */
 	private void reparerNed() {
 		T hjelp;
 		boolean ferdig = false;
@@ -101,10 +107,18 @@ public class TabellHaug<T extends Comparable<T>> {
 		}
 	}
 
+	/**
+	 * Metode som viser om haugen er tom eller ikke
+	 * 
+	 * @return Boolean true om haugen er tom, false hvis den ikke er tom.
+	 */
 	public boolean erTom() {
 		return antall == 0;
 	}
 
+	/**
+	 * Skriver ut tabellen
+	 */
 	public void skrivTab() {
 		// Hjelpemetode til test
 		for (int i = 0; i < antall; i++)
